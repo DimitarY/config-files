@@ -13,6 +13,12 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 
+" Set title and status line
+set title
+set titlestring=%F
+set laststatus=2
+set statusline=%F\%m\ %l/%L\ %c\ %P
+
 " Highlight search results
 set hlsearch
 
@@ -35,10 +41,6 @@ set linebreak
 set breakindent
 set breakindentopt=shift:2
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=1
-
 " Disable arrow keys to avoid accidental usage
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -58,6 +60,12 @@ vmap <F2> c
 " Toggle comment/uncomment with <Ctrl+/>
 nmap <F3> :call CommentOrUncomment()<CR>
 vmap <F3> :call CommentOrUncomment()<CR>
+
+" Copy to system clipboard (Alt + c) | Only in gvim
+noremap <M-c> "+y
+
+" Paste from system clipboard (Alt + v) | Only in gvim
+noremap <M-v> "+p
 
 function! CommentOrUncomment()
     let ft = &filetype
@@ -101,19 +109,8 @@ function! GetCommentChars()
     return []
 endfunction
 
-
-" Fold instructions:
-" - Use `za` to toggle folding for the current fold.
-" - Use `zo` to open a fold under the cursor.
-" - Use `zc` to close a fold under the cursor.
-" - Use `zR` to open all folds in the current buffer.
-" - Use `zM` to close all folds in the current buffer.
-" - Use `zj` to move the cursor to the next fold.
-" - Use `zk` to move the cursor to the previous fold.
-
 " Comment instructions:
 " - Press <F3> to toggle commenting on the current line or selected lines.
 " - Comment characters are determined based on the file type.
 " - For single line comments, use <F3> to toggle commenting/uncommenting.
 " - For block comments, select multiple lines and use <F3> to toggle commenting/uncommenting.
-
