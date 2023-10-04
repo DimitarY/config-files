@@ -8,6 +8,7 @@ set relativenumber
 set autoindent
 
 " Set tab and indentation settings
+set expandtab
 set shiftwidth=4
 set softtabstop=4
 set smarttab
@@ -49,12 +50,12 @@ noremap <Right> <Nop>
 " Set the spell language to English
 set spelllang=en_us
 
-" Map spell checker to F9 key
-map <F9> :set spell!<CR>
-
 " Map F2 to change inner word
 nmap <F2> ciw
 vmap <F2> c
+
+" Map spell checker to F9 key
+map <F9> :set spell!<CR>
 
 " Toggle comment/uncomment with <Ctrl+/>
 nmap <F3> :call CommentOrUncomment()<CR>
