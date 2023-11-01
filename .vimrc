@@ -30,8 +30,8 @@ if has("syntax")
     syntax on
 endif
 
-" Set the color scheme to 'desert'
-colorscheme desert
+" Set the color scheme to 'new_slate'
+colorscheme new_slate
 
 " Enable line wrapping
 set wrap
